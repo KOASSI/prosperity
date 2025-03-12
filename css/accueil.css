@@ -5,7 +5,6 @@ body {
     padding: 0;
     color: #333;
     line-height: 1.6;
-   
 }
 
 header {
@@ -28,7 +27,6 @@ nav {
 }
 
 .logo img {
-    
     width: 100px;
 }
 
@@ -41,37 +39,36 @@ nav {
 .nav-links li {
     margin-left: 20px;
 }
+
 .nav-links a {
     color: #070606;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-    position: relative; /* Nécessaire pour positionner le pseudo-élément */
+    position: relative;
 }
 
 /* Pseudo-élément pour le soulignement */
 .nav-links a::after {
     content: '';
     position: absolute;
-    width: 0; /* Largeur initiale à 0 */
-    height: 2px; /* Épaisseur du soulignement */
-    background-color: #3498db; /* Couleur du soulignement */
-    bottom: -5px; /* Position en bas du lien */
-    left: 0; /* Commence à gauche */
-    transition: width 0.3s ease; /* Animation de la largeur */
+    width: 0;
+    height: 2px;
+    background-color: #3498db;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
 }
 
 /* Au survol, animer la largeur du soulignement */
 .nav-links a:hover::after {
-    width: 100%; /* Largeur à 100% au survol */
+    width: 100%;
 }
 
 /* Changement de couleur du texte au survol */
 .nav-links a:hover {
     color: #3498db;
 }
-
-
 
 /* Sections */
 .services, .equipe, .contact {
@@ -104,113 +101,161 @@ nav {
     border-radius: 10px;
     margin-bottom: 15px;
 }
+
+/* Footer */
 footer {
-    background-color: #2c3e50; /* Couleur de fond sombre */
-    color: #ecf0f1; /* Couleur du texte clair */
+    background-color: #2c3e50;
+    color: #ecf0f1;
     padding: 20px 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .footer-section h3 {
-    margin-bottom: 15px;
-    position: relative;
-    overflow: hidden;
-  }
-  .footer-content {
+}
+
+.footer-content {
     display: flex;
     justify-content: space-around;
     max-width: 1200px;
     margin: 0 auto;
-    animation: fadeIn 1s ease; /* Animation d'apparition */
-  }
-  
-  .footer-section {
+}
+
+.footer-section {
     flex: 1;
     margin: 0 20px;
-  }
-  footer img {
-    width: 28px; /* Ajustez la largeur selon vos besoins */
-    height: auto; /* Conserve le ratio d'aspect */
-    object-fit: cover; /* Assure que l'image couvre la zone sans déformation */
-    border-radius: 50%; /* Optionnel : pour rendre les images rondes */
-    margin-right: 18px;
-  }
-  
-  .footer-section h3::after {
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section h3::after {
     content: '';
     display: block;
     width: 100%;
     height: 2px;
-    background: #3498db; /* Couleur de la ligne */
+    background: #3498db;
     transform: translateX(-100%);
     animation: slideIn 0.5s forwards;
-  }
-  /* Conteneur pour les sections du footer */
-  .footer-container {
-      display: flex;
-      justify-content: space-between; /* Aligner les sections avec un espacement égal */
-      align-items: flex-start; /* Aligner les éléments en haut */
-      flex-wrap: nowrap; /* Éviter le passage à la ligne */
-      max-width: 1200px;
-      margin: 0 auto;
-      animation: fadeIn 1s ease; /* Animation d'apparition */
-    }
-    
-    /* Style des sections du footer */
-    .footer-section {
-      flex: 1; /* Chaque section prend un espace égal */
-      margin: 0 20px; /* Espacement entre les sections */
-      min-width: 200px; /* Largeur minimale pour chaque section */
-      position: relative; /* Pour les animations internes */
-    }
+}
 
-/* Media Queries */
+footer img {
+    width: 28px;
+    height: auto;
+    margin-right: 18px;
+}
 
-/* Pour les écrans jusqu'à 768px (tablettes et téléphones) */
-@media (max-width: 768px) {
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .nav-links li {
-        margin: 10px;
-    }
-
-    .service-card, .team-card {
-        width: 45%;
-    }
-
-    .services h2, .equipe h2, .contact h2 {
-        font-size: 2rem;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-section {
-        margin: 10px 0;
-        text-align: center;
+/* Animations */
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Queries pour tous les écrans */
+
 /* Pour les écrans jusqu'à 480px (téléphones) */
-@media (max-width: 1800px) {
-    .nav-links li {
-        margin: 5px;
+@media (max-width: 480px) {
+    .nav-links {
+        flex-wrap: wrap; /* Les liens passent à la ligne */
+        justify-content: center; /* Centrer les liens */
     }
 
-    .service-card, .team-card {
-        width: 100%;
+    .nav-links li {
+        margin: 10px; /* Espacement entre les liens */
     }
 
     .logo img {
-        width: 80px;
+        width: 80px; /* Réduire la taille du logo */
+    }
+
+    .services h2, .equipe h2, .contact h2 {
+        font-size: 2rem; /* Réduire la taille des titres */
+    }
+
+    .service-card, .team-card {
+        width: 100%; /* Prendre 100% de la largeur */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Afficher les sections en colonne */
+        align-items: center; /* Centrer les sections */
     }
 
     .footer-section {
-        min-width: 100%;
+        margin: 10px 0; /* Espacement entre les sections */
+    }
+}
+
+/* Pour les écrans de 481px à 768px (tablettes en mode portrait) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .nav-links li {
+        margin-left: 15px; /* Réduire l'espacement entre les liens */
+    }
+
+    .service-card, .team-card {
+        width: 45%; /* Prendre 45% de la largeur */
+    }
+
+    .footer-content {
+        flex-wrap: wrap; /* Passer à la ligne si nécessaire */
+    }
+
+    .footer-section {
+        flex: 1 1 45%; /* Prendre 45% de la largeur */
+        margin: 10px; /* Espacement entre les sections */
+    }
+}
+
+/* Pour les écrans de 769px à 1024px (tablettes en mode paysage) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .service-card, .team-card {
+        width: 30%; /* Prendre 30% de la largeur */
+    }
+
+    .footer-content {
+        flex-wrap: wrap; /* Passer à la ligne si nécessaire */
+    }
+
+    .footer-section {
+        flex: 1 1 30%; /* Prendre 30% de la largeur */
+        margin: 10px; /* Espacement entre les sections */
+    }
+}
+
+/* Pour les écrans de 1025px à 1200px (petits écrans de bureau) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .service-card, .team-card {
+        width: 22%; /* Prendre 22% de la largeur */
+    }
+
+    .footer-content {
+        flex-wrap: nowrap; /* Ne pas passer à la ligne */
+    }
+
+    .footer-section {
+        flex: 1; /* Prendre un espace égal */
+        margin: 0 20px; /* Espacement entre les sections */
+    }
+}
+
+/* Pour les écrans de 1201px et plus (grands écrans de bureau) */
+@media (min-width: 1201px) {
+    .service-card, .team-card {
+        width: 20%; /* Prendre 20% de la largeur */
+    }
+
+    .footer-content {
+        flex-wrap: nowrap; /* Ne pas passer à la ligne */
+    }
+
+    .footer-section {
+        flex: 1; /* Prendre un espace égal */
+        margin: 0 20px; /* Espacement entre les sections */
     }
 }
