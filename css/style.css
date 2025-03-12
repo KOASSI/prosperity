@@ -1,306 +1,265 @@
 /* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  header {
-    background-color: #edf2f8;
-    color: #fff;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #edf2f8;
+  color: #fff;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .logo img {
-    height: 50px;
+  height: 50px;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    margin-left: auto;
+  list-style: none;
+  display: flex;
+  margin-left: auto;
 }
 
 .nav-links li {
-    margin-left: 20px;
+  margin-left: 20px;
 }
+
 .nav-links a {
-    color: #070606;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    position: relative; /* Nécessaire pour positionner le pseudo-élément */
+  color: #070606;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  position: relative;
 }
 
-/* Pseudo-élément pour le soulignement */
 .nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0; /* Largeur initiale à 0 */
-    height: 2px; /* Épaisseur du soulignement */
-    background-color: #3498db; /* Couleur du soulignement */
-    bottom: -5px; /* Position en bas du lien */
-    left: 0; /* Commence à gauche */
-    transition: width 0.3s ease; /* Animation de la largeur */
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #3498db;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.3s ease;
 }
 
-/* Au survol, animer la largeur du soulignement */
 .nav-links a:hover::after {
-    width: 100%; /* Largeur à 100% au survol */
+  width: 100%;
 }
 
-/* Changement de couleur du texte au survol */
 .nav-links a:hover {
-    color: #3498db;
+  color: #3498db;
 }
 
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.menu-toggle .bar {
-    height: 3px;
-    width: 25px;
-    background-color: #080808;
-    margin: 4px 0;
-  section {
-    padding: 20px;
-    margin: 20px 0;
+.gallery-container, .phototheque-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.jeans-item, .design-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.jeans-item img, .design-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.select-button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.select-button:hover {
+  background: #555;
+}
+
+footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+}
+
+.footer-section h3::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #3498db;
+  transform: translateX(-100%);
+  animation: slideIn 0.5s forwards;
+}
+
+footer img {
+  width: 28px;
+  height: auto;
+  margin-right: 18px;
+}
+
+/* Animations */
+@keyframes slideIn {
+  to {
+      transform: translateX(0);
   }
 }
-  h2 {
-    margin-bottom: 20px;
-    text-align: center;
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
   }
-  
-  .gallery-container, .phototheque-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  to {
+      opacity: 1;
   }
-  
-  .jeans-item, .design-item {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px;
-    width: 200px;
-    text-align: center;
-  }
-  
-  .jeans-item img, .design-item img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .select-button {
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .select-button:hover {
-    background: #555;
-  }
-  
-  footer {
-    background-color: #2c3e50; /* Couleur de fond sombre */
-    color: #ecf0f1; /* Couleur du texte clair */
-    padding: 20px 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .footer-section h3 {
-    margin-bottom: 15px;
-    position: relative;
-    overflow: hidden;
-  }
-  .footer-content {
-    display: flex;
-    justify-content: space-around;
-    max-width: 1200px;
-    margin: 0 auto;
-    animation: fadeIn 1s ease; /* Animation d'apparition */
-  }
-  
-  .footer-section {
-    flex: 1;
-    margin: 0 20px;
-  }
-  footer img {
-    width: 28px; /* Ajustez la largeur selon vos besoins */
-    height: auto; /* Conserve le ratio d'aspect */
-    object-fit: cover; /* Assure que l'image couvre la zone sans déformation */
-    border-radius: 50%; /* Optionnel : pour rendre les images rondes */
-    margin-right: 18px;
-  }
-  
-  .footer-section h3::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: #3498db; /* Couleur de la ligne */
-    transform: translateX(-100%);
-    animation: slideIn 0.5s forwards;
-  }
-  /* Conteneur pour les sections du footer */
-  .footer-container {
-      display: flex;
-      justify-content: space-between; /* Aligner les sections avec un espacement égal */
-      align-items: flex-start; /* Aligner les éléments en haut */
-      flex-wrap: nowrap; /* Éviter le passage à la ligne */
-      max-width: 1200px;
-      margin: 0 auto;
-      animation: fadeIn 1s ease; /* Animation d'apparition */
-    }
-    
-    /* Style des sections du footer */
-    .footer-section {
-      flex: 1; /* Chaque section prend un espace égal */
-      margin: 0 20px; /* Espacement entre les sections */
-      min-width: 200px; /* Largeur minimale pour chaque section */
-      position: relative; /* Pour les animations internes */
-    }
-    /* Media Queries pour les écrans de 100px à 480px */
+}
+
+/* Media Queries pour tous les écrans */
+
+/* Pour les écrans jusqu'à 480px (téléphones) */
 @media (max-width: 480px) {
   .nav-links {
-      display: none;
+      flex-wrap: wrap; /* Les liens passent à la ligne */
+      justify-content: center; /* Centrer les liens */
   }
 
-  .menu-toggle {
-      display: flex;
+  .nav-links li {
+      margin: 10px; /* Espacement entre les liens */
+  }
+
+  .logo img {
+      height: 40px; /* Réduire la taille du logo */
   }
 
   .gallery-container, .phototheque-container {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: column; /* Afficher les éléments en colonne */
+      align-items: center; /* Centrer les éléments */
   }
 
   .jeans-item, .design-item {
-      width: 90%;
+      width: 90%; /* Prendre 90% de la largeur */
   }
 
   .footer-content {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: column; /* Afficher les sections en colonne */
+      align-items: center; /* Centrer les sections */
   }
 
   .footer-section {
-      margin: 10px 0;
+      margin: 10px 0; /* Espacement entre les sections */
   }
 }
 
-/* Media Queries pour les écrans de 481px à 768px */
+/* Pour les écrans de 481px à 768px (tablettes en mode portrait) */
 @media (min-width: 481px) and (max-width: 768px) {
-  .nav-links {
-      display: none;
-  }
-
-  .menu-toggle {
-      display: flex;
-  }
-
-  .gallery-container, .phototheque-container {
-      justify-content: center;
+  .nav-links li {
+      margin-left: 15px; /* Réduire l'espacement entre les liens */
   }
 
   .jeans-item, .design-item {
-      width: 45%;
+      width: 45%; /* Prendre 45% de la largeur */
   }
 
   .footer-content {
-      flex-wrap: wrap;
+      flex-wrap: wrap; /* Passer à la ligne si nécessaire */
   }
 
   .footer-section {
-      flex: 1 1 45%;
-      margin: 10px;
+      flex: 1 1 45%; /* Prendre 45% de la largeur */
+      margin: 10px; /* Espacement entre les sections */
   }
 }
 
-/* Media Queries pour les écrans de 769px à 1024px */
+/* Pour les écrans de 769px à 1024px (tablettes en mode paysage) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .gallery-container, .phototheque-container {
-      justify-content: space-around;
-  }
-
   .jeans-item, .design-item {
-      width: 30%;
+      width: 30%; /* Prendre 30% de la largeur */
   }
 
   .footer-content {
-      flex-wrap: wrap;
+      flex-wrap: wrap; /* Passer à la ligne si nécessaire */
   }
 
   .footer-section {
-      flex: 1 1 30%;
-      margin: 10px;
+      flex: 1 1 30%; /* Prendre 30% de la largeur */
+      margin: 10px; /* Espacement entre les sections */
   }
 }
 
-/* Media Queries pour les écrans de 1025px à 1200px */
+/* Pour les écrans de 1025px à 1200px (petits écrans de bureau) */
 @media (min-width: 1025px) and (max-width: 1200px) {
-  .gallery-container, .phototheque-container {
-      justify-content: space-around;
-  }
-
   .jeans-item, .design-item {
-      width: 22%;
+      width: 22%; /* Prendre 22% de la largeur */
   }
 
   .footer-content {
-      flex-wrap: nowrap;
+      flex-wrap: nowrap; /* Ne pas passer à la ligne */
   }
 
   .footer-section {
-      flex: 1;
-      margin: 0 20px;
+      flex: 1; /* Prendre un espace égal */
+      margin: 0 20px; /* Espacement entre les sections */
   }
 }
 
-/* Media Queries pour les écrans de 1201px à 1800px */
-@media (min-width: 1201px) and (max-width: 1800px) {
-  .gallery-container, .phototheque-container {
-      justify-content: space-around;
-  }
-
+/* Pour les écrans de 1201px et plus (grands écrans de bureau) */
+@media (min-width: 1201px) {
   .jeans-item, .design-item {
-      width: 20%;
+      width: 20%; /* Prendre 20% de la largeur */
   }
 
   .footer-content {
-      flex-wrap: nowrap;
-  }
-
-  .footer-section {
-      flex: 1;
-      margin: 0 20px;
-  }
-}
+      flex-wrap: nowrap; /
+       }
+        }
