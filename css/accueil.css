@@ -197,7 +197,7 @@ footer {
 }
 
 /* Pour les écrans jusqu'à 480px (téléphones) */
-@media (max-width: 480px) {
+@media (max-width: 180px) {
     .nav-links li {
         margin: 5px;
     }
