@@ -194,3 +194,107 @@ footer {
         height: 40px;
     }
 }
+
+/* Media Queries pour les écrans de 100px à 480px */
+@media (max-width: 480px) {
+    .service-card, .team-card {
+        width: 100%;
+    }
+
+    .services h2, .equipe h2, .contact h2 {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin: 10px 0;
+    }
+}
+
+/* Media Queries pour les écrans de 481px à 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .service-card, .team-card {
+        width: 45%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+    }
+
+    .footer-section {
+        flex: 1 1 45%;
+        margin: 10px;
+    }
+}
+
+/* Media Queries pour les écrans de 769px à 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .service-card, .team-card {
+        width: 30%;
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+    }
+
+    .footer-section {
+        flex: 1 1 30%;
+        margin: 10px;
+    }
+}
+
+/* Media Queries pour les écrans de 1025px à 1200px */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .service-card, .team-card {
+        width: 22%;
+    }
+
+    .footer-content {
+        flex-wrap: nowrap;
+    }
+
+    .footer-section {
+        flex: 1;
+        margin: 0 20px;
+    }
+}
+
+/* Media Queries pour les écrans de 1201px à 1800px */
+@media (min-width: 1201px) and (max-width: 1800px) {
+    .service-card, .team-card {
+        width: 20%;
+    }
+
+    .footer-content {
+        flex-wrap: nowrap;
+    }
+
+    .footer-section {
+        flex: 1;
+        margin: 0 20px;
+    }
+}
