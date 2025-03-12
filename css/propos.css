@@ -1,0 +1,143 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: #edf2f8;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+.nav-links a {
+    color: #070606;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    position: relative; /* Nécessaire pour positionner le pseudo-élément */
+}
+
+/* Pseudo-élément pour le soulignement */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Largeur initiale à 0 */
+    height: 2px; /* Épaisseur du soulignement */
+    background-color: #3498db; /* Couleur du soulignement */
+    bottom: -5px; /* Position en bas du lien */
+    left: 0; /* Commence à gauche */
+    transition: width 0.3s ease; /* Animation de la largeur */
+}
+
+/* Au survol, animer la largeur du soulignement */
+.nav-links a:hover::after {
+    width: 100%; /* Largeur à 100% au survol */
+}
+
+/* Changement de couleur du texte au survol */
+.nav-links a:hover {
+    color: #3498db;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #080808;
+    margin: 4px 0;
+}
+
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#bg-video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.form-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.8);
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
