@@ -141,3 +141,61 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+/* Media Queries pour la responsivité */
+
+/* Pour les écrans de taille moyenne (tablettes) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Masquer les liens de navigation */
+        flex-direction: column;
+        width: 100%;
+        background-color: #edf2f8;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Afficher les liens lorsque le menu est activé */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex; /* Afficher le bouton de menu */
+    }
+
+    .form-container {
+        margin: 80px auto;
+        padding: 15px;
+    }
+}
+
+/* Pour les petits écrans (téléphones) */
+@media (max-width: 480px) {
+    .logo img {
+        height: 40px; /* Réduire la taille du logo */
+    }
+
+    .form-container {
+        max-width: 90%; /* Réduire la largeur du formulaire */
+        margin: 60px auto;
+        padding: 10px;
+    }
+
+    .form-container h2 {
+        font-size: 1.5rem; /* Réduire la taille du titre */
+    }
+
+    .form-group input, .form-group textarea {
+        padding: 8px; /* Réduire le padding des champs */
+    }
+
+    button {
+        padding: 8px; /* Réduire le padding du bouton */
+    }
+ }
