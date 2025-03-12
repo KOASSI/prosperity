@@ -1,9 +1,11 @@
+/* Général */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
 }
+
 header {
     background-color: #edf2f8;
     color: #fff;
@@ -36,29 +38,30 @@ nav {
 .nav-links li {
     margin-left: 20px;
 }
+
 .nav-links a {
     color: #070606;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-    position: relative; /* Nécessaire pour positionner le pseudo-élément */
+    position: relative;
 }
 
 /* Pseudo-élément pour le soulignement */
 .nav-links a::after {
     content: '';
     position: absolute;
-    width: 0; /* Largeur initiale à 0 */
-    height: 2px; /* Épaisseur du soulignement */
-    background-color: #3498db; /* Couleur du soulignement */
-    bottom: -5px; /* Position en bas du lien */
-    left: 0; /* Commence à gauche */
-    transition: width 0.3s ease; /* Animation de la largeur */
+    width: 0;
+    height: 2px;
+    background-color: #3498db;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
 }
 
 /* Au survol, animer la largeur du soulignement */
 .nav-links a:hover::after {
-    width: 100%; /* Largeur à 100% au survol */
+    width: 100%;
 }
 
 /* Changement de couleur du texte au survol */
@@ -71,14 +74,6 @@ nav {
     flex-direction: column;
     cursor: pointer;
 }
-
-.menu-toggle .bar {
-    height: 3px;
-    width: 25px;
-    background-color: #080808;
-    margin: 4px 0;
-}
-
 
 .video-background {
     position: fixed;
@@ -141,50 +136,28 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-/* Media Queries pour la responsivité */
 
-/* Pour les écrans de taille moyenne (tablettes) */
-@media (max-width: 768px) {
+/* Media Queries pour tous les écrans */
+
+/* Pour les écrans jusqu'à 480px (téléphones) */
+@media (max-width: 480px) {
     .nav-links {
-        display: none; /* Masquer les liens de navigation */
-        flex-direction: column;
-        width: 100%;
-        background-color: #edf2f8;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 10px 0;
-    }
-
-    .nav-links.active {
-        display: flex; /* Afficher les liens lorsque le menu est activé */
+        flex-wrap: wrap; /* Les liens passent à la ligne */
+        justify-content: center; /* Centrer les liens */
     }
 
     .nav-links li {
-        margin: 10px 0;
-        text-align: center;
+        margin: 10px; /* Espacement entre les liens */
     }
 
-    .menu-toggle {
-        display: flex; /* Afficher le bouton de menu */
-    }
-
-    .form-container {
-        margin: 80px auto;
-        padding: 15px;
-    }
-}
-
-/* Pour les petits écrans (téléphones) */
-@media (max-width: 1800px) {
     .logo img {
         height: 40px; /* Réduire la taille du logo */
     }
 
     .form-container {
         max-width: 90%; /* Réduire la largeur du formulaire */
-        margin: 60px auto;
-        padding: 10px;
+        margin: 80px auto; /* Ajuster la marge */
+        padding: 15px; /* Réduire le padding */
     }
 
     .form-container h2 {
@@ -198,4 +171,52 @@ button:hover {
     button {
         padding: 8px; /* Réduire le padding du bouton */
     }
- }
+}
+
+/* Pour les écrans de 481px à 768px (tablettes en mode portrait) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .nav-links li {
+        margin-left: 15px; /* Réduire l'espacement entre les liens */
+    }
+
+    .form-container {
+        max-width: 80%; /* Ajuster la largeur du formulaire */
+        margin: 100px auto; /* Ajuster la marge */
+    }
+}
+
+/* Pour les écrans de 769px à 1024px (tablettes en mode paysage) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-links li {
+        margin-left: 20px; /* Espacement par défaut */
+    }
+
+    .form-container {
+        max-width: 60%; /* Ajuster la largeur du formulaire */
+        margin: 120px auto; /* Ajuster la marge */
+    }
+}
+
+/* Pour les écrans de 1025px à 1200px (petits écrans de bureau) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .nav-links li {
+        margin-left: 25px; /* Augmenter l'espacement entre les liens */
+    }
+
+    .form-container {
+        max-width: 50%; /* Ajuster la largeur du formulaire */
+        margin: 150px auto; /* Ajuster la marge */
+    }
+}
+
+/* Pour les écrans de 1201px et plus (grands écrans de bureau) */
+@media (min-width: 1201px) {
+    .nav-links li {
+        margin-left: 30px; /* Augmenter l'espacement entre les liens */
+    }
+
+    .form-container {
+        max-width: 40%; /* Ajuster la largeur du formulaire */
+        margin: 200px auto; /* Ajuster la marge */
+    }
+}
