@@ -176,7 +176,7 @@ button:hover {
 }
 
 /* Pour les petits écrans (téléphones) */
-@media (max-width: 480px) {
+@media (max-width: 1800px) {
     .logo img {
         height: 40px; /* Réduire la taille du logo */
     }
